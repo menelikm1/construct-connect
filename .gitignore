@@ -1,0 +1,12 @@
+# Go binaries
+/bin/
+/pkg/
+
+# IDE files
+.idea/
+*.swp
+*.swo
+*.DS_Store
+
+# Vendor directory
+/vendor/
