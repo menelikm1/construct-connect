@@ -10,3 +10,6 @@
 
 # Vendor directory
 /vendor/
+
+# Environment — never commit secrets
+.env
