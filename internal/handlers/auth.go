@@ -8,10 +8,10 @@ import (
 	"github.com/jackc/pgx/v5/pgxpool"
 	"golang.org/x/crypto/bcrypt"
 
-	"constructconnect-backend/internal/auth"
-	"constructconnect-backend/internal/config"
-	"constructconnect-backend/internal/models"
-	"constructconnect-backend/internal/repository"
+	"qetero/internal/auth"
+	"qetero/internal/config"
+	"qetero/internal/models"
+	"qetero/internal/repository"
 )
 
 type AuthHandler struct {
@@ -50,10 +50,12 @@ func (h *AuthHandler) Register(c *gin.Context) {
 	user := &models.User{
 		ID:           uuid.New(),
 		Name:         req.Name,
-		Email:        req.Email,
 		Phone:        req.Phone,
 		PasswordHash: string(hash),
 		Role:         req.Role,
+	}
+	if req.Email != "" {
+		user.Email = &req.Email
 	}
 
 	if err := h.users.Create(c.Request.Context(), user); err != nil {
