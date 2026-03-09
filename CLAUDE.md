@@ -1,5 +1,8 @@
 # Qetero — Claude Context
 
+## Claude Preferences
+- **Never add `Co-Authored-By: Claude` to commit messages.**
+
 Ethiopia's P2P rental marketplace for heavy machinery and construction equipment. Think Turo for excavators, cranes, concrete mixers — built for the Ethiopian market. Private project.
 
 ## Stack
