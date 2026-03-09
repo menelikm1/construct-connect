@@ -59,7 +59,7 @@ func (h *AuthHandler) Register(c *gin.Context) {
 	}
 
 	if err := h.users.Create(c.Request.Context(), user); err != nil {
-		c.JSON(http.StatusConflict, gin.H{"error": "email already registered"})
+		c.JSON(http.StatusConflict, gin.H{"error": "registration failed", "detail": err.Error()})
 		return
 	}
 
